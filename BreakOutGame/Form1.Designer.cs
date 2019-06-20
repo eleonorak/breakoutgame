@@ -33,19 +33,29 @@
             this.welcomeMessage = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblNickName = new System.Windows.Forms.Label();
-            this.lblLanguage = new System.Windows.Forms.Label();
+            this.lbNickName = new System.Windows.Forms.Label();
+            this.lbLanguage = new System.Windows.Forms.Label();
             this.txtNickName = new System.Windows.Forms.TextBox();
             this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbLevel = new System.Windows.Forms.Label();
+            this.cbLevel = new System.Windows.Forms.ComboBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.SettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeBallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.едноБојниToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.различниБоиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameName
             // 
             this.gameName.AutoSize = true;
             this.gameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameName.Location = new System.Drawing.Point(38, 23);
+            this.gameName.Location = new System.Drawing.Point(134, 52);
             this.gameName.Name = "gameName";
             this.gameName.Size = new System.Drawing.Size(446, 42);
             this.gameName.TabIndex = 0;
@@ -56,7 +66,7 @@
             this.welcomeMessage.AutoSize = true;
             this.welcomeMessage.BackColor = System.Drawing.Color.White;
             this.welcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeMessage.Location = new System.Drawing.Point(152, 109);
+            this.welcomeMessage.Location = new System.Drawing.Point(258, 138);
             this.welcomeMessage.Name = "welcomeMessage";
             this.welcomeMessage.Size = new System.Drawing.Size(204, 31);
             this.welcomeMessage.TabIndex = 1;
@@ -64,7 +74,7 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(89, 358);
+            this.btnPlay.Location = new System.Drawing.Point(212, 450);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(122, 41);
             this.btnPlay.TabIndex = 2;
@@ -74,36 +84,37 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(278, 358);
+            this.btnCancel.Location = new System.Drawing.Point(414, 450);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 41);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Откажи";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // lblNickName
+            // lbNickName
             // 
-            this.lblNickName.AutoSize = true;
-            this.lblNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNickName.Location = new System.Drawing.Point(67, 208);
-            this.lblNickName.Name = "lblNickName";
-            this.lblNickName.Size = new System.Drawing.Size(86, 25);
-            this.lblNickName.TabIndex = 4;
-            this.lblNickName.Text = "Прекар";
+            this.lbNickName.AutoSize = true;
+            this.lbNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNickName.Location = new System.Drawing.Point(207, 230);
+            this.lbNickName.Name = "lbNickName";
+            this.lbNickName.Size = new System.Drawing.Size(86, 25);
+            this.lbNickName.TabIndex = 4;
+            this.lbNickName.Text = "Прекар";
             // 
-            // lblLanguage
+            // lbLanguage
             // 
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(67, 272);
-            this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(69, 25);
-            this.lblLanguage.TabIndex = 5;
-            this.lblLanguage.Text = "Јазик";
+            this.lbLanguage.AutoSize = true;
+            this.lbLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLanguage.Location = new System.Drawing.Point(207, 294);
+            this.lbLanguage.Name = "lbLanguage";
+            this.lbLanguage.Size = new System.Drawing.Size(69, 25);
+            this.lbLanguage.TabIndex = 5;
+            this.lbLanguage.Text = "Јазик";
             // 
             // txtNickName
             // 
-            this.txtNickName.Location = new System.Drawing.Point(189, 208);
+            this.txtNickName.Location = new System.Drawing.Point(329, 230);
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.Size = new System.Drawing.Size(145, 20);
             this.txtNickName.TabIndex = 6;
@@ -115,7 +126,7 @@
             this.cbLanguage.Items.AddRange(new object[] {
             "Македонски",
             "Англиски"});
-            this.cbLanguage.Location = new System.Drawing.Point(189, 272);
+            this.cbLanguage.Location = new System.Drawing.Point(329, 294);
             this.cbLanguage.Name = "cbLanguage";
             this.cbLanguage.Size = new System.Drawing.Size(145, 21);
             this.cbLanguage.TabIndex = 7;
@@ -124,27 +135,107 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // lbLevel
+            // 
+            this.lbLevel.AutoSize = true;
+            this.lbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLevel.Location = new System.Drawing.Point(207, 351);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(62, 25);
+            this.lbLevel.TabIndex = 8;
+            this.lbLevel.Text = "Ниво";
+            // 
+            // cbLevel
+            // 
+            this.cbLevel.FormattingEnabled = true;
+            this.cbLevel.Items.AddRange(new object[] {
+            "Македонски",
+            "Англиски"});
+            this.cbLevel.Location = new System.Drawing.Point(329, 355);
+            this.cbLevel.Name = "cbLevel";
+            this.cbLevel.Size = new System.Drawing.Size(145, 21);
+            this.cbLevel.TabIndex = 9;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SettingsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(754, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // SettingsToolStripMenuItem
+            // 
+            this.SettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ChangeBallToolStripMenuItem,
+            this.ChangeBlocksToolStripMenuItem,
+            this.ChangeBackgroundToolStripMenuItem});
+            this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
+            this.SettingsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.SettingsToolStripMenuItem.Text = "Подесување";
+            // 
+            // ChangeBallToolStripMenuItem
+            // 
+            this.ChangeBallToolStripMenuItem.Name = "ChangeBallToolStripMenuItem";
+            this.ChangeBallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBallToolStripMenuItem.Text = "Боја топче";
+            // 
+            // ChangeBlocksToolStripMenuItem
+            // 
+            this.ChangeBlocksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.едноБојниToolStripMenuItem,
+            this.различниБоиToolStripMenuItem});
+            this.ChangeBlocksToolStripMenuItem.Name = "ChangeBlocksToolStripMenuItem";
+            this.ChangeBlocksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBlocksToolStripMenuItem.Text = "Боја блокови";
+            // 
+            // ChangeBackgroundToolStripMenuItem
+            // 
+            this.ChangeBackgroundToolStripMenuItem.Name = "ChangeBackgroundToolStripMenuItem";
+            this.ChangeBackgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBackgroundToolStripMenuItem.Text = "Позадинска боја";
+            // 
+            // едноБојниToolStripMenuItem
+            // 
+            this.едноБојниToolStripMenuItem.Name = "едноБојниToolStripMenuItem";
+            this.едноБојниToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.едноБојниToolStripMenuItem.Text = "Една боја";
+            // 
+            // различниБоиToolStripMenuItem
+            // 
+            this.различниБоиToolStripMenuItem.Name = "различниБоиToolStripMenuItem";
+            this.различниБоиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.различниБоиToolStripMenuItem.Text = "Различни бои";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(552, 447);
+            this.ClientSize = new System.Drawing.Size(754, 527);
+            this.Controls.Add(this.cbLevel);
+            this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.txtNickName);
-            this.Controls.Add(this.lblLanguage);
-            this.Controls.Add(this.lblNickName);
+            this.Controls.Add(this.lbLanguage);
+            this.Controls.Add(this.lbNickName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.welcomeMessage);
             this.Controls.Add(this.gameName);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The BreakOut Game";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,11 +247,20 @@
         private System.Windows.Forms.Label welcomeMessage;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label lblNickName;
-        private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.Label lbNickName;
+        private System.Windows.Forms.Label lbLanguage;
         private System.Windows.Forms.TextBox txtNickName;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ComboBox cbLevel;
+        private System.Windows.Forms.Label lbLevel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem SettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChangeBallToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChangeBlocksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChangeBackgroundToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem едноБојниToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem различниБоиToolStripMenuItem;
     }
 }
 

@@ -33,17 +33,17 @@ namespace BreakOutGame
         public GameForm(Player p)
         {
             InitializeComponent();
-            
-
             this.DoubleBuffered = true;
+
+
             //foreach (Control c in this.Controls)
-           // {
-                //if (c is PictureBox && c.Tag == "block")
-               // {
-                   // Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                   // c.BackColor = randomColor;
-               // }
-           // }
+            // {
+            //if (c is PictureBox && c.Tag == "block")
+            // {
+            // Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            // c.BackColor = randomColor;
+            // }
+            // }
 
             Player gamePlayer = p;
             string nickNamePlayer = gamePlayer.nickName;
@@ -65,7 +65,18 @@ namespace BreakOutGame
                 y = y + blockHeight + 15;
             }
 
+            //set random color for blocks
+            foreach (Block bl in this.blocks)
+            {
+                
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                bl.color = randomColor;
+                
+            }
+            player.BackColor = Color.Cyan;
             
+
+
 
         }
 
@@ -153,10 +164,15 @@ namespace BreakOutGame
                 }
             }
             
-            if (score > 41)
+            if (score > 2)
             {
+                Form1 mainForm = new Form1();
                 gameOver();
                 MessageBox.Show("You Win" + score);
+                this.Hide();
+                mainForm.ShowDialog();
+                
+
             }
 
             this.Invalidate();
@@ -175,15 +191,15 @@ namespace BreakOutGame
                 b.Draw(e.Graphics);
             }
 
-           // if(block != null)
-            //{
-               // //foreach
-               // block.Draw(e.Graphics);
-           // }
             foreach(Block b in this.blocks)
             {
                 b.Draw(e.Graphics);
             }
+        }
+
+        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

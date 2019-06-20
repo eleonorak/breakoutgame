@@ -18,6 +18,8 @@ namespace BreakOutGame
             InitializeComponent();
             this.ActiveControl = txtNickName;
             cbLanguage.SelectedIndex = 0;
+
+           // btnPlay.Click += new System.EventHandler(Clic)
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace BreakOutGame
 
         private void txtNickName_Validating(object sender, CancelEventArgs e)
         {
+          
             if(txtNickName.Text.Trim().Length  == 0)
             {
                 errorProvider.SetError(txtNickName, "За да започнете со игра потребо е да внесете Прекар.");
@@ -44,6 +47,13 @@ namespace BreakOutGame
                 errorProvider.SetError(txtNickName, null);
                 e.Cancel = false;
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
+           
+            Application.Exit();
         }
     }
 }
