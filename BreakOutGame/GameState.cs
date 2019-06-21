@@ -15,6 +15,7 @@ namespace BreakOutGame
         public Color ballColor { get; set; }
         public Color backgroundColor { get; set; }
         public Color blocksColor { get; set; }
+        public Color playerColor { get; set; }
         public bool isMoreColor { get; set; }
         
        public GameState() { }

@@ -24,6 +24,7 @@ namespace BreakOutGame
         public Color gameBallColor = Color.White;
         public Color gameBackgroundColor = Color.Black;
         public Color gameBlocksColor { get; set; }
+        public Color gamePlayerColor { get; set; }
         public bool blocksIsMoreColor { get; set; }
 
         public Block block;
@@ -41,15 +42,18 @@ namespace BreakOutGame
         public GameForm(GameState state)
         {
             InitializeComponent();
-            Player p = state.player;
+            Player gamePlayer = state.player;
             Color ballColor = state.ballColor;
             Color backgroundColor = state.backgroundColor;
             Color blocksColor = state.blocksColor;
+            Color playerColor = state.playerColor;
             bool isMoreColor = state.isMoreColor;
+
             this.DoubleBuffered = true;
             this.gameBallColor = ballColor;
             this.gameBackgroundColor = backgroundColor;
             this.gameBlocksColor = blocksColor;
+            this.gamePlayerColor = playerColor;
             this.blocksIsMoreColor = isMoreColor;
 
             this.BackColor = gameBackgroundColor;
@@ -64,7 +68,7 @@ namespace BreakOutGame
             // }
             // }
 
-            Player gamePlayer = p;
+            
             string nickNamePlayer = gamePlayer.nickName;
             player.Text = nickNamePlayer;
 
@@ -95,6 +99,7 @@ namespace BreakOutGame
 
                 }
             }
+            //set one color for blocks
             else
             {
                 foreach (Block bl in this.blocks)
@@ -105,8 +110,8 @@ namespace BreakOutGame
 
                 }
             }
-           
-            player.BackColor = Color.Cyan;
+
+            player.BackColor = gamePlayerColor;
          
         }
 

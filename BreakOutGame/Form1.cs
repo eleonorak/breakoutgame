@@ -19,14 +19,11 @@ namespace BreakOutGame
         public Color ballColor = Color.Yellow;
         public Color gameBackgroundColor = Color.Black;
         public Color blocksColor = Color.Red;
+        public Color playerColor = Color.White;
         public bool isMoreColor = true;
  
 
-        
-        
-
-
-
+       
         public Form1()
         {
             InitializeComponent();
@@ -50,6 +47,7 @@ namespace BreakOutGame
             state.ballColor = this.ballColor;
             state.backgroundColor = this.gameBackgroundColor;
             state.blocksColor = this.blocksColor;
+            state.playerColor = this.playerColor;
             state.isMoreColor = this.isMoreColor;
 
             GameForm gameForm = new GameForm(state);
@@ -74,8 +72,6 @@ namespace BreakOutGame
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            
-           
             Application.Exit();
         }
 
@@ -86,7 +82,7 @@ namespace BreakOutGame
 
             if(result == DialogResult.OK)
             {
-                ballColor = colorDialog.Color;
+                this.ballColor = colorDialog.Color;
             }
         }
 
@@ -97,7 +93,7 @@ namespace BreakOutGame
 
             if (result == DialogResult.OK)
             {
-                gameBackgroundColor = colorDialog.Color;
+                this.gameBackgroundColor = colorDialog.Color;
             }
         }
 
@@ -107,14 +103,14 @@ namespace BreakOutGame
               
                 OneColorToolStripMenuItem.Checked = true;
                 MoreColorToolStripMenuItem.Checked = false;
-                isMoreColor = false;
+                 this.isMoreColor = false;
 
                 ColorDialog colorDialog = new ColorDialog();
                 DialogResult result = colorDialog.ShowDialog();
 
                 if (result == DialogResult.OK)
                 {
-                    blocksColor = colorDialog.Color;
+                   this.blocksColor = colorDialog.Color;
                 }
         }
 
@@ -122,7 +118,18 @@ namespace BreakOutGame
         {
             OneColorToolStripMenuItem.Checked = false;
             MoreColorToolStripMenuItem.Checked = true;
-            isMoreColor = true;
+            this.isMoreColor = true;
+        }
+
+        private void ChangePlayerColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.playerColor = colorDialog.Color;
+            }
         }
     }
 }
