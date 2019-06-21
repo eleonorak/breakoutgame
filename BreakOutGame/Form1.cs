@@ -12,14 +12,30 @@ namespace BreakOutGame
 {
     public partial class Form1 : Form
     {
+       
+
+        public GameState state { get; set; }
         public Player player { get; set; }
+        public Color ballColor = Color.Yellow;
+        public Color gameBackgroundColor = Color.Black;
+        public Color blocksColor = Color.Red;
+        public bool isMoreColor = true;
+ 
+
+        
+        
+
+
+
         public Form1()
         {
             InitializeComponent();
             this.ActiveControl = txtNickName;
             cbLanguage.SelectedIndex = 0;
 
-           // btnPlay.Click += new System.EventHandler(Clic)
+            OneColorToolStripMenuItem.Checked = false;
+            MoreColorToolStripMenuItem.Checked = true;
+
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -29,7 +45,14 @@ namespace BreakOutGame
             player = new Player(nickNamePlayer);
             this.Hide();
 
-            GameForm gameForm = new GameForm(player);
+            state = new GameState();
+            state.player = this.player;
+            state.ballColor = this.ballColor;
+            state.backgroundColor = this.gameBackgroundColor;
+            state.blocksColor = this.blocksColor;
+            state.isMoreColor = this.isMoreColor;
+
+            GameForm gameForm = new GameForm(state);
             gameForm.ShowDialog();
           
         }
@@ -55,5 +78,53 @@ namespace BreakOutGame
            
             Application.Exit();
         }
+
+        private void ChangeBallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                ballColor = colorDialog.Color;
+            }
+        }
+
+        private void ChangeBackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            DialogResult result = colorDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                gameBackgroundColor = colorDialog.Color;
+            }
+        }
+
+        private void OneColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+              
+                OneColorToolStripMenuItem.Checked = true;
+                MoreColorToolStripMenuItem.Checked = false;
+                isMoreColor = false;
+
+                ColorDialog colorDialog = new ColorDialog();
+                DialogResult result = colorDialog.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    blocksColor = colorDialog.Color;
+                }
+        }
+
+        private void MoreColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OneColorToolStripMenuItem.Checked = false;
+            MoreColorToolStripMenuItem.Checked = true;
+            isMoreColor = true;
+        }
     }
 }
+
+

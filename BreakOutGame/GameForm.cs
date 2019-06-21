@@ -20,7 +20,15 @@ namespace BreakOutGame
         int score = 0;
 
         public Ball b;
+
+        public Color gameBallColor = Color.White;
+        public Color gameBackgroundColor = Color.Black;
+        public Color gameBlocksColor { get; set; }
+        public bool blocksIsMoreColor { get; set; }
+
         public Block block;
+
+        
 
         int blockWidth = 125;
         int blockHeight = 23;
@@ -30,10 +38,21 @@ namespace BreakOutGame
 
 
 
-        public GameForm(Player p)
+        public GameForm(GameState state)
         {
             InitializeComponent();
+            Player p = state.player;
+            Color ballColor = state.ballColor;
+            Color backgroundColor = state.backgroundColor;
+            Color blocksColor = state.blocksColor;
+            bool isMoreColor = state.isMoreColor;
             this.DoubleBuffered = true;
+            this.gameBallColor = ballColor;
+            this.gameBackgroundColor = backgroundColor;
+            this.gameBlocksColor = blocksColor;
+            this.blocksIsMoreColor = isMoreColor;
+
+            this.BackColor = gameBackgroundColor;
 
 
             //foreach (Control c in this.Controls)
@@ -66,18 +85,29 @@ namespace BreakOutGame
             }
 
             //set random color for blocks
-            foreach (Block bl in this.blocks)
+            if(blocksIsMoreColor == true)
             {
-                
-                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-                bl.color = randomColor;
-                
+                foreach (Block bl in this.blocks)
+                {
+
+                    Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                    bl.color = randomColor;
+
+                }
             }
+            else
+            {
+                foreach (Block bl in this.blocks)
+                {
+
+
+                    bl.color = gameBlocksColor ;
+
+                }
+            }
+           
             player.BackColor = Color.Cyan;
-            
-
-
-
+         
         }
 
         private void GameForm_KeyUp(object sender, KeyEventArgs e)
@@ -112,7 +142,7 @@ namespace BreakOutGame
             
           if (null == b)
             {
-                b = new Ball(418, 324, Color.White,15);
+                b = new Ball(418, 324, gameBallColor, 15);
             }
             
 

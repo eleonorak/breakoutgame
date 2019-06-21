@@ -40,15 +40,15 @@
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbLevel = new System.Windows.Forms.Label();
             this.cbLevel = new System.Windows.Forms.ComboBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menu = new System.Windows.Forms.MenuStrip();
             this.SettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeBallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OneColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MoreColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeBackgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.едноБојниToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.различниБоиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameName
@@ -156,15 +156,15 @@
             this.cbLevel.Size = new System.Drawing.Size(145, 21);
             this.cbLevel.TabIndex = 9;
             // 
-            // menuStrip1
+            // menu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(754, 24);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(754, 24);
+            this.menu.TabIndex = 10;
+            this.menu.Text = "menuStrip1";
             // 
             // SettingsToolStripMenuItem
             // 
@@ -179,35 +179,39 @@
             // ChangeBallToolStripMenuItem
             // 
             this.ChangeBallToolStripMenuItem.Name = "ChangeBallToolStripMenuItem";
-            this.ChangeBallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBallToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangeBallToolStripMenuItem.Text = "Боја топче";
+            this.ChangeBallToolStripMenuItem.Click += new System.EventHandler(this.ChangeBallToolStripMenuItem_Click);
             // 
             // ChangeBlocksToolStripMenuItem
             // 
             this.ChangeBlocksToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.едноБојниToolStripMenuItem,
-            this.различниБоиToolStripMenuItem});
+            this.OneColorToolStripMenuItem,
+            this.MoreColorToolStripMenuItem});
             this.ChangeBlocksToolStripMenuItem.Name = "ChangeBlocksToolStripMenuItem";
             this.ChangeBlocksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ChangeBlocksToolStripMenuItem.Text = "Боја блокови";
+            this.ChangeBlocksToolStripMenuItem.Text = "Боја на блокови";
+            // 
+            // OneColorToolStripMenuItem
+            // 
+            this.OneColorToolStripMenuItem.Name = "OneColorToolStripMenuItem";
+            this.OneColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OneColorToolStripMenuItem.Text = "Една боја";
+            this.OneColorToolStripMenuItem.Click += new System.EventHandler(this.OneColorToolStripMenuItem_Click);
+            // 
+            // MoreColorToolStripMenuItem
+            // 
+            this.MoreColorToolStripMenuItem.Name = "MoreColorToolStripMenuItem";
+            this.MoreColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MoreColorToolStripMenuItem.Text = "Различни бои";
+            this.MoreColorToolStripMenuItem.Click += new System.EventHandler(this.MoreColorToolStripMenuItem_Click);
             // 
             // ChangeBackgroundToolStripMenuItem
             // 
             this.ChangeBackgroundToolStripMenuItem.Name = "ChangeBackgroundToolStripMenuItem";
-            this.ChangeBackgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBackgroundToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangeBackgroundToolStripMenuItem.Text = "Позадинска боја";
-            // 
-            // едноБојниToolStripMenuItem
-            // 
-            this.едноБојниToolStripMenuItem.Name = "едноБојниToolStripMenuItem";
-            this.едноБојниToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.едноБојниToolStripMenuItem.Text = "Една боја";
-            // 
-            // различниБоиToolStripMenuItem
-            // 
-            this.различниБоиToolStripMenuItem.Name = "различниБоиToolStripMenuItem";
-            this.различниБоиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.различниБоиToolStripMenuItem.Text = "Различни бои";
+            this.ChangeBackgroundToolStripMenuItem.Click += new System.EventHandler(this.ChangeBackgroundToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -225,17 +229,17 @@
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.welcomeMessage);
             this.Controls.Add(this.gameName);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menu;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The BreakOut Game";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,13 +258,13 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox cbLevel;
         private System.Windows.Forms.Label lbLevel;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem SettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangeBallToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangeBlocksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ChangeBackgroundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem едноБојниToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem различниБоиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OneColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MoreColorToolStripMenuItem;
     }
 }
 
