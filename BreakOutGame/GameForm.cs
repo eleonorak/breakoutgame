@@ -19,6 +19,7 @@ namespace BreakOutGame
         int bally = 5;
         int score = 0;
 
+        public bool gameIsPaused = false;
         public Ball b;
 
         public Color gameBallColor = Color.White;
@@ -42,6 +43,8 @@ namespace BreakOutGame
         public GameForm(GameState state)
         {
             InitializeComponent();
+
+
             Player gamePlayer = state.player;
             Color ballColor = state.ballColor;
             Color backgroundColor = state.backgroundColor;
@@ -139,6 +142,27 @@ namespace BreakOutGame
             {
                 goRight = true;
             }
+
+            //pause
+
+            if(gameIsPaused == false)
+            {
+                if (e.KeyCode == Keys.P)
+                {
+                    timer1.Stop();
+                    gameIsPaused = true;
+
+                }
+            }
+            else
+            {
+                if (e.KeyCode == Keys.P)
+                {
+                    timer1.Start();
+                    gameIsPaused = false;
+                }
+            }
+           
         }
 
         private void timer1_Tick(object sender, EventArgs e)
