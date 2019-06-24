@@ -27,7 +27,7 @@ namespace BreakOutGame
         public Form1()
         {
             InitializeComponent();
-            this.ActiveControl = txtNickName;
+            
             cbLanguage.SelectedIndex = 0;
 
             OneColorToolStripMenuItem.Checked = false;
@@ -39,6 +39,11 @@ namespace BreakOutGame
         {
             
             string nickNamePlayer = txtNickName.Text;
+            if (nickNamePlayer.Trim().Length == 0)
+            {
+                MessageBox.Show("Полето за прекар е задолжително");
+                return;
+            }
             player = new Player(nickNamePlayer);
             this.Hide();
 
