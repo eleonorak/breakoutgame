@@ -118,11 +118,11 @@ namespace BreakOutGame
             for(int i = 0; i < rows; i++)
             {
                  x = 32;
-                this.blocks.Add(new Block(x, y, Color.Red, blockWidth, blockHeight));
+                this.blocks.Add(new Block(x, y, gameBlocksColor, blockWidth, blockHeight));
                 for ( int j = 0; j < columns; j++ )
                 {
                     x = x +  blockWidth + 15;
-                    this.blocks.Add(new Block(x, y, Color.Red, blockWidth, blockHeight));
+                    this.blocks.Add(new Block(x, y, gameBlocksColor, blockWidth, blockHeight));
                 }
                 y = y + blockHeight + 15;
             }
@@ -259,9 +259,9 @@ namespace BreakOutGame
                 }
             }
             
-            if (score > winScore)
+            if (score >= winScore)
             {
-                Form1 mainForm = new Form1();
+                Form1 mainForm = new Form1(state);
                 gameOver();
                 MessageBox.Show("You Win" + score);
                 this.Hide();

@@ -25,15 +25,47 @@ namespace BreakOutGame
 
 
 
-        public Form1()
+        public Form1(GameState gamestate)
         {
             InitializeComponent();
-            
-            cbLanguage.SelectedIndex = 0;
-            cbLevel.SelectedIndex = 0;
 
-            OneColorToolStripMenuItem.Checked = false;
-            MoreColorToolStripMenuItem.Checked = true;
+            this.state = gamestate;
+            if (state != null)
+            {
+                if (state.player == null)
+                {
+                    cbLanguage.SelectedIndex = 0;
+                    cbLevel.SelectedIndex = 0;
+
+                    OneColorToolStripMenuItem.Checked = false;
+                    MoreColorToolStripMenuItem.Checked = true;
+                    return;
+                }
+                else
+                {
+                    txtNickName.Text = state.player.nickName;
+                    cbLevel.SelectedIndex = state.level;
+                    cbLanguage.SelectedIndex = 0;
+                    ballColor = state.ballColor;
+                    gameBackgroundColor = state.backgroundColor;
+                    blocksColor = state.blocksColor;
+                    playerColor = state.playerColor;
+                    isMoreColor = state.isMoreColor;
+                    gameLevel = state.level;
+
+                    if (isMoreColor == true)
+                    {
+                        OneColorToolStripMenuItem.Checked = false;
+                        MoreColorToolStripMenuItem.Checked = true;
+                    }
+                    else
+                    {
+                        OneColorToolStripMenuItem.Checked = true;
+                        MoreColorToolStripMenuItem.Checked = false;
+                    }
+                }
+
+            }
 
         }
 

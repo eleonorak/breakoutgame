@@ -14,9 +14,10 @@ namespace BreakOutGame
         [STAThread]
         static void Main()
         {
+            GameState state = new GameState();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(state));
         }
     }
 }
