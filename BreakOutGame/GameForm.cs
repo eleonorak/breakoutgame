@@ -12,28 +12,39 @@ namespace BreakOutGame
 {
     public partial class GameForm : Form
     {
+        int score = 0;
+        int winScore;
         bool goRight;
         bool goLeft;
-        int speed = 10;
-        int ballx = 5;
-        int bally = 5;
-        int score = 0;
+        int speed;
+        int ballx;
+        int bally;
+        int blockWidth;
+        int blockHeight;
+        int rows; //i
+        int columns; //j
+        int moveLeft;
+        int moveRight;
+
+
+        GameState state { get; set; }
 
         public bool gameIsPaused = false;
         public Ball b;
 
+        public  Player gamePlayer { get; set; }
         public Color gameBallColor = Color.White;
         public Color gameBackgroundColor = Color.Black;
         public Color gameBlocksColor { get; set; }
         public Color gamePlayerColor { get; set; }
         public bool blocksIsMoreColor { get; set; }
+        public int gameLevel { get; set; }
 
         public Block block;
 
         
 
-        int blockWidth = 125;
-        int blockHeight = 23;
+       
         List<Block> blocks;
 
         private Random rnd = new Random();
@@ -45,19 +56,16 @@ namespace BreakOutGame
             InitializeComponent();
 
 
-            Player gamePlayer = state.player;
-            Color ballColor = state.ballColor;
-            Color backgroundColor = state.backgroundColor;
-            Color blocksColor = state.blocksColor;
-            Color playerColor = state.playerColor;
-            bool isMoreColor = state.isMoreColor;
-
             this.DoubleBuffered = true;
-            this.gameBallColor = ballColor;
-            this.gameBackgroundColor = backgroundColor;
-            this.gameBlocksColor = blocksColor;
-            this.gamePlayerColor = playerColor;
-            this.blocksIsMoreColor = isMoreColor;
+            this.state = state;
+
+            this.gamePlayer = state.player;
+            this.gameBallColor = state.ballColor;
+            this.gameBackgroundColor = state.backgroundColor;
+            this.gameBlocksColor = state.blocksColor;
+            this.gamePlayerColor = state.playerColor;
+            this.blocksIsMoreColor = state.isMoreColor;
+            this.gameLevel = state.level;
 
             this.BackColor = gameBackgroundColor;
 
@@ -71,7 +79,35 @@ namespace BreakOutGame
             // }
             // }
 
-            
+            if (gameLevel == 0)
+            {
+                speed = 10;
+                ballx = 5;
+                bally = 5;
+                blockWidth = 125;
+                blockHeight = 23;
+                rows = 7; //i
+                columns = 5; //j
+                winScore = rows * (columns + 1);
+                moveLeft = speed;
+                moveRight = speed;
+            }
+            else
+            {
+                
+                speed = 15;
+                ballx = 10;
+                bally = 10;
+                blockWidth = 63;
+                blockHeight = 23;
+                rows = 7; //i
+                columns = 10; //j
+                winScore = rows * (columns + 1);
+                moveLeft = speed + 10;
+                moveRight = speed + 10;
+            }
+
+
             string nickNamePlayer = gamePlayer.nickName;
             player.Text = nickNamePlayer;
 
@@ -79,11 +115,11 @@ namespace BreakOutGame
 
             int x;
             int y = 73;
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < rows; i++)
             {
                  x = 32;
                 this.blocks.Add(new Block(x, y, Color.Red, blockWidth, blockHeight));
-                for ( int j = 0; j < 5; j++ )
+                for ( int j = 0; j < columns; j++ )
                 {
                     x = x +  blockWidth + 15;
                     this.blocks.Add(new Block(x, y, Color.Red, blockWidth, blockHeight));
@@ -187,8 +223,8 @@ namespace BreakOutGame
 
 
             label1.Text = "Score: " + score;
-            if (goLeft) { player.Left -= speed; } // move left
-            if (goRight) { player.Left += speed; } // move right
+            if (goLeft) { player.Left -= moveLeft; } // move left
+            if (goRight) { player.Left += moveRight; } // move right
             if (player.Left < 1)
             {
                 goLeft = false; // stop the car from going off screen
@@ -223,7 +259,7 @@ namespace BreakOutGame
                 }
             }
             
-            if (score > 2)
+            if (score > winScore)
             {
                 Form1 mainForm = new Form1();
                 gameOver();

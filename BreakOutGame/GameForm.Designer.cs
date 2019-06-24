@@ -39,7 +39,7 @@
             this.player.BackColor = System.Drawing.Color.White;
             this.player.Enabled = false;
             this.player.ForeColor = System.Drawing.Color.Black;
-            this.player.Location = new System.Drawing.Point(476, 632);
+            this.player.Location = new System.Drawing.Point(585, 632);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(175, 23);
             this.player.TabIndex = 80;

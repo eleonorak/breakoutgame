@@ -21,14 +21,16 @@ namespace BreakOutGame
         public Color blocksColor = Color.Red;
         public Color playerColor = Color.White;
         public bool isMoreColor = true;
- 
+        public int gameLevel = 0;
 
-       
+
+
         public Form1()
         {
             InitializeComponent();
             
             cbLanguage.SelectedIndex = 0;
+            cbLevel.SelectedIndex = 0;
 
             OneColorToolStripMenuItem.Checked = false;
             MoreColorToolStripMenuItem.Checked = true;
@@ -54,6 +56,7 @@ namespace BreakOutGame
             state.blocksColor = this.blocksColor;
             state.playerColor = this.playerColor;
             state.isMoreColor = this.isMoreColor;
+            state.level = this.gameLevel;
 
             GameForm gameForm = new GameForm(state);
             gameForm.ShowDialog();
@@ -62,6 +65,7 @@ namespace BreakOutGame
 
         private void txtNickName_Validating(object sender, CancelEventArgs e)
         {
+          
           
             if(txtNickName.Text.Trim().Length  == 0)
             {
@@ -135,6 +139,11 @@ namespace BreakOutGame
             {
                 this.playerColor = colorDialog.Color;
             }
+        }
+
+        private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gameLevel = cbLevel.SelectedIndex;
         }
     }
 }

@@ -150,12 +150,13 @@
             // 
             this.cbLevel.FormattingEnabled = true;
             this.cbLevel.Items.AddRange(new object[] {
-            "Македонски",
-            "Англиски"});
+            "Лесно",
+            "Тешко"});
             this.cbLevel.Location = new System.Drawing.Point(329, 355);
             this.cbLevel.Name = "cbLevel";
             this.cbLevel.Size = new System.Drawing.Size(145, 21);
             this.cbLevel.TabIndex = 9;
+            this.cbLevel.SelectedIndexChanged += new System.EventHandler(this.cbLevel_SelectedIndexChanged);
             // 
             // menu
             // 
