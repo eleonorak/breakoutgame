@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,7 @@ namespace BreakOutGame
         int moveLeft;
         int moveRight;
 
+        public SoundPlayer breakBlocksPlayer;
 
         GameState state { get; set; }
 
@@ -58,6 +60,8 @@ namespace BreakOutGame
 
             this.DoubleBuffered = true;
             this.state = state;
+
+            breakBlocksPlayer = new SoundPlayer("../../Assets/button-33a.wav");
 
             this.gamePlayer = state.player;
             this.gameBallColor = state.ballColor;
@@ -252,7 +256,8 @@ namespace BreakOutGame
             {
                 if (bl.Show && bRect.IntersectsWith(bl.Rectangle))
                 {
-                   
+                    breakBlocksPlayer.Play();
+
                     bally = -bally;
                     score++;
                     bl.Show = false;
