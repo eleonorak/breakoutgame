@@ -73,16 +73,6 @@ namespace BreakOutGame
 
             this.BackColor = gameBackgroundColor;
 
-
-            //foreach (Control c in this.Controls)
-            // {
-            //if (c is PictureBox && c.Tag == "block")
-            // {
-            // Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
-            // c.BackColor = randomColor;
-            // }
-            // }
-
             if (gameLevel == 0)
             {
                 speed = 10;
@@ -90,8 +80,8 @@ namespace BreakOutGame
                 bally = 5;
                 blockWidth = 125;
                 blockHeight = 23;
-                rows = 7; //i
-                columns = 5; //j
+                rows = 7; 
+                columns = 5;
                 winScore = rows * (columns + 1);
                 moveLeft = speed;
                 moveRight = speed;
@@ -104,8 +94,8 @@ namespace BreakOutGame
                 bally = 10;
                 blockWidth = 63;
                 blockHeight = 23;
-                rows = 7; //i
-                columns = 10; //j
+                rows = 7; 
+                columns = 10;
                 winScore = rows * (columns + 1);
                 moveLeft = speed + 10;
                 moveRight = speed + 10;
@@ -213,14 +203,9 @@ namespace BreakOutGame
             {
                 b = new Ball(418, 324, gameBallColor, 15);
             }
-            
-
-            //Invalidate();
-         
-            
+           
             b.X += ballx;
             b.Y += bally;
-
 
             Rectangle bRect = new Rectangle(new Point((int)b.X, (int)b.Y), new Size(30,30));
             
@@ -231,7 +216,7 @@ namespace BreakOutGame
             if (goRight) { player.Left += moveRight; } // move right
             if (player.Left < 1)
             {
-                goLeft = false; // stop the car from going off screen
+                goLeft = false; 
             }
             else if (player.Left + player.Width > 920)
             {
@@ -239,12 +224,12 @@ namespace BreakOutGame
             }
             if (bRect.Left + bRect.Width > ClientSize.Width || bRect.Left < 0)
             {
-                ballx = -ballx; // this will bounce the object from the left or right border
+                ballx = -ballx; 
             }
             if (bRect.Top < 0 || bRect.IntersectsWith(player.Bounds))
             {
-                //MessageBox.Show(player.Bounds.X.ToString());
-                bally = -bally; // this will bounce the object from top and bottom border
+                
+                bally = -bally; 
             }
             if (bRect.Top + bRect .Height > ClientSize.Height)
             {
