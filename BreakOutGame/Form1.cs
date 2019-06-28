@@ -34,7 +34,7 @@ namespace BreakOutGame
             {
                 if (state.player == null)
                 {
-                    cbLanguage.SelectedIndex = 0;
+                    
                     cbLevel.SelectedIndex = 0;
 
                     OneColorToolStripMenuItem.Checked = false;
@@ -45,7 +45,7 @@ namespace BreakOutGame
                 {
                     txtNickName.Text = state.player.nickName;
                     cbLevel.SelectedIndex = state.level;
-                    cbLanguage.SelectedIndex = 0;
+                    
                     ballColor = state.ballColor;
                     gameBackgroundColor = state.backgroundColor;
                     blocksColor = state.blocksColor;

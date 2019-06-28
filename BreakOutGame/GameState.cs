@@ -18,6 +18,8 @@ namespace BreakOutGame
         public Color playerColor { get; set; }
         public bool isMoreColor { get; set; }
         public int level { get; set; }
+        public int gameScore { get; set; }
+        public bool isWon { get; set; }
 
 
         public GameState() { }

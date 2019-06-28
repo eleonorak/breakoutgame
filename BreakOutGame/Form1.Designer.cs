@@ -34,9 +34,7 @@
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lbNickName = new System.Windows.Forms.Label();
-            this.lbLanguage = new System.Windows.Forms.Label();
             this.txtNickName = new System.Windows.Forms.TextBox();
-            this.cbLanguage = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbLevel = new System.Windows.Forms.Label();
             this.cbLevel = new System.Windows.Forms.ComboBox();
@@ -55,8 +53,8 @@
             // gameName
             // 
             this.gameName.AutoSize = true;
-            this.gameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameName.Location = new System.Drawing.Point(134, 52);
+            this.gameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameName.Location = new System.Drawing.Point(98, 53);
             this.gameName.Name = "gameName";
             this.gameName.Size = new System.Drawing.Size(446, 42);
             this.gameName.TabIndex = 0;
@@ -67,7 +65,7 @@
             this.welcomeMessage.AutoSize = true;
             this.welcomeMessage.BackColor = System.Drawing.Color.White;
             this.welcomeMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.welcomeMessage.Location = new System.Drawing.Point(258, 138);
+            this.welcomeMessage.Location = new System.Drawing.Point(222, 139);
             this.welcomeMessage.Name = "welcomeMessage";
             this.welcomeMessage.Size = new System.Drawing.Size(204, 31);
             this.welcomeMessage.TabIndex = 1;
@@ -75,7 +73,7 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(212, 450);
+            this.btnPlay.Location = new System.Drawing.Point(176, 451);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(122, 41);
             this.btnPlay.TabIndex = 2;
@@ -85,7 +83,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(414, 450);
+            this.btnCancel.Location = new System.Drawing.Point(378, 451);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 41);
             this.btnCancel.TabIndex = 3;
@@ -97,40 +95,19 @@
             // 
             this.lbNickName.AutoSize = true;
             this.lbNickName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNickName.Location = new System.Drawing.Point(207, 230);
+            this.lbNickName.Location = new System.Drawing.Point(171, 271);
             this.lbNickName.Name = "lbNickName";
             this.lbNickName.Size = new System.Drawing.Size(86, 25);
             this.lbNickName.TabIndex = 4;
             this.lbNickName.Text = "Прекар";
             // 
-            // lbLanguage
-            // 
-            this.lbLanguage.AutoSize = true;
-            this.lbLanguage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLanguage.Location = new System.Drawing.Point(207, 294);
-            this.lbLanguage.Name = "lbLanguage";
-            this.lbLanguage.Size = new System.Drawing.Size(69, 25);
-            this.lbLanguage.TabIndex = 5;
-            this.lbLanguage.Text = "Јазик";
-            // 
             // txtNickName
             // 
-            this.txtNickName.Location = new System.Drawing.Point(329, 230);
+            this.txtNickName.Location = new System.Drawing.Point(293, 271);
             this.txtNickName.Name = "txtNickName";
             this.txtNickName.Size = new System.Drawing.Size(145, 20);
             this.txtNickName.TabIndex = 6;
             this.txtNickName.Validating += new System.ComponentModel.CancelEventHandler(this.txtNickName_Validating);
-            // 
-            // cbLanguage
-            // 
-            this.cbLanguage.FormattingEnabled = true;
-            this.cbLanguage.Items.AddRange(new object[] {
-            "Македонски",
-            "Англиски"});
-            this.cbLanguage.Location = new System.Drawing.Point(329, 294);
-            this.cbLanguage.Name = "cbLanguage";
-            this.cbLanguage.Size = new System.Drawing.Size(145, 21);
-            this.cbLanguage.TabIndex = 7;
             // 
             // errorProvider
             // 
@@ -140,7 +117,7 @@
             // 
             this.lbLevel.AutoSize = true;
             this.lbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLevel.Location = new System.Drawing.Point(207, 351);
+            this.lbLevel.Location = new System.Drawing.Point(171, 352);
             this.lbLevel.Name = "lbLevel";
             this.lbLevel.Size = new System.Drawing.Size(62, 25);
             this.lbLevel.TabIndex = 8;
@@ -152,7 +129,7 @@
             this.cbLevel.Items.AddRange(new object[] {
             "Лесно",
             "Тешко"});
-            this.cbLevel.Location = new System.Drawing.Point(329, 355);
+            this.cbLevel.Location = new System.Drawing.Point(293, 356);
             this.cbLevel.Name = "cbLevel";
             this.cbLevel.Size = new System.Drawing.Size(145, 21);
             this.cbLevel.TabIndex = 9;
@@ -164,7 +141,7 @@
             this.SettingsToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(754, 24);
+            this.menu.Size = new System.Drawing.Size(700, 24);
             this.menu.TabIndex = 10;
             this.menu.Text = "menuStrip1";
             // 
@@ -228,12 +205,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 527);
+            this.ClientSize = new System.Drawing.Size(700, 527);
             this.Controls.Add(this.cbLevel);
             this.Controls.Add(this.lbLevel);
-            this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.txtNickName);
-            this.Controls.Add(this.lbLanguage);
             this.Controls.Add(this.lbNickName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPlay);
@@ -262,9 +237,7 @@
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lbNickName;
-        private System.Windows.Forms.Label lbLanguage;
         private System.Windows.Forms.TextBox txtNickName;
-        private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.ComboBox cbLevel;
         private System.Windows.Forms.Label lbLevel;

@@ -248,9 +248,10 @@ namespace BreakOutGame
             }
             if (bRect.Top + bRect .Height > ClientSize.Height)
             {
-                gameOver();
-                MessageBox.Show("You Lost");
-                
+                state.gameScore = score;
+                state.isWon = false;
+                gameEnded();
+
             }
             foreach(Block bl in this.blocks)
             {
@@ -266,20 +267,21 @@ namespace BreakOutGame
             
             if (score >= winScore)
             {
-                Form1 mainForm = new Form1(state);
-                gameOver();
-                MessageBox.Show("You Win" + score);
-                this.Hide();
-                mainForm.ShowDialog();
-                
+                state.gameScore = score;
+                state.isWon = true;
+                gameEnded();
 
             }
 
             this.Invalidate();
         }
-        private void gameOver()
+        private void gameEnded()
         {
             timer1.Stop();
+            
+            GameEndedForm endGame = new GameEndedForm(state);
+            this.Hide();
+            endGame.ShowDialog();
         }
 
       
