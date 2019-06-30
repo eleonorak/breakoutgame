@@ -28,6 +28,7 @@ namespace BreakOutGame
         public Form1(GameState gamestate)
         {
             InitializeComponent();
+          
 
             this.state = gamestate;
             if (state != null)

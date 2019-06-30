@@ -100,6 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(416, 390);
             this.Controls.Add(this.btnNewGame);
             this.Controls.Add(this.btnGoToMainForm);
@@ -107,6 +108,7 @@
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.infoGame);
             this.Controls.Add(this.gameName);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

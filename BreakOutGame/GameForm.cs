@@ -56,6 +56,7 @@ namespace BreakOutGame
         public GameForm(GameState state)
         {
             InitializeComponent();
+       
 
 
             this.DoubleBuffered = true;
@@ -192,7 +193,8 @@ namespace BreakOutGame
                     gameIsPaused = false;
                 }
             }
-           
+            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -211,7 +213,7 @@ namespace BreakOutGame
             
 
 
-            label1.Text = "Score: " + score;
+            label1.Text = "Поени: " + score;
             if (goLeft) { player.Left -= moveLeft; } // move left
             if (goRight) { player.Left += moveRight; } // move right
             if (player.Left < 1)
