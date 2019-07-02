@@ -182,6 +182,8 @@ namespace BreakOutGame
                 {
                     timer1.Stop();
                     gameIsPaused = true;
+                    gamePaused.Text = "Играта е паузирана";
+                    label1.Hide();
 
                 }
             }
@@ -191,6 +193,8 @@ namespace BreakOutGame
                 {
                     timer1.Start();
                     gameIsPaused = false;
+                    gamePaused.Text = "";
+                    label1.Show();
                 }
             }
             

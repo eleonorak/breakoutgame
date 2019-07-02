@@ -102,7 +102,7 @@ namespace BreakOutGame
           
             if(txtNickName.Text.Trim().Length  == 0)
             {
-                errorProvider.SetError(txtNickName, "За да започнете со игра потребо е да внесете Прекар.");
+                errorProvider.SetError(txtNickName, "Потребо е да внесете Прекар.");
                 e.Cancel = true;
             }
             else
@@ -178,6 +178,8 @@ namespace BreakOutGame
         {
             gameLevel = cbLevel.SelectedIndex;
         }
+
+       
     }
 }
 

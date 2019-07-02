@@ -137,6 +137,7 @@
             // 
             // menu
             // 
+            this.menu.BackColor = System.Drawing.Color.PapayaWhip;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SettingsToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
@@ -159,7 +160,7 @@
             // ChangeBallToolStripMenuItem
             // 
             this.ChangeBallToolStripMenuItem.Name = "ChangeBallToolStripMenuItem";
-            this.ChangeBallToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBallToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangeBallToolStripMenuItem.Text = "Боја на топче";
             this.ChangeBallToolStripMenuItem.Click += new System.EventHandler(this.ChangeBallToolStripMenuItem_Click);
             // 
@@ -169,34 +170,34 @@
             this.OneColorToolStripMenuItem,
             this.MoreColorToolStripMenuItem});
             this.ChangeBlocksToolStripMenuItem.Name = "ChangeBlocksToolStripMenuItem";
-            this.ChangeBlocksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBlocksToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangeBlocksToolStripMenuItem.Text = "Боја на блокови";
             // 
             // OneColorToolStripMenuItem
             // 
             this.OneColorToolStripMenuItem.Name = "OneColorToolStripMenuItem";
-            this.OneColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.OneColorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.OneColorToolStripMenuItem.Text = "Една боја";
             this.OneColorToolStripMenuItem.Click += new System.EventHandler(this.OneColorToolStripMenuItem_Click);
             // 
             // MoreColorToolStripMenuItem
             // 
             this.MoreColorToolStripMenuItem.Name = "MoreColorToolStripMenuItem";
-            this.MoreColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.MoreColorToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.MoreColorToolStripMenuItem.Text = "Различни бои";
             this.MoreColorToolStripMenuItem.Click += new System.EventHandler(this.MoreColorToolStripMenuItem_Click);
             // 
             // ChangeBackgroundToolStripMenuItem
             // 
             this.ChangeBackgroundToolStripMenuItem.Name = "ChangeBackgroundToolStripMenuItem";
-            this.ChangeBackgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeBackgroundToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangeBackgroundToolStripMenuItem.Text = "Позадинска боја";
             this.ChangeBackgroundToolStripMenuItem.Click += new System.EventHandler(this.ChangeBackgroundToolStripMenuItem_Click);
             // 
             // ChangePlayerColorToolStripMenuItem
             // 
             this.ChangePlayerColorToolStripMenuItem.Name = "ChangePlayerColorToolStripMenuItem";
-            this.ChangePlayerColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangePlayerColorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ChangePlayerColorToolStripMenuItem.Text = "Боја на играч";
             this.ChangePlayerColorToolStripMenuItem.Click += new System.EventHandler(this.ChangePlayerColorToolStripMenuItem_Click);
             // 
@@ -221,7 +222,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "The BreakOut Game";
+            this.Text = "The Breakout Game";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();

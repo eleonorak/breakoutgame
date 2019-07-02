@@ -114,7 +114,7 @@
             this.MinimizeBox = false;
             this.Name = "GameEndedForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "The BreakOut Game";
+            this.Text = "The Breakout Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 

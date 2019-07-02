@@ -32,6 +32,7 @@
             this.player = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.gamePaused = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // player
@@ -64,12 +65,23 @@
             this.label1.TabIndex = 81;
             this.label1.Text = "label1";
             // 
+            // gamePaused
+            // 
+            this.gamePaused.AutoSize = true;
+            this.gamePaused.BackColor = System.Drawing.Color.White;
+            this.gamePaused.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gamePaused.Location = new System.Drawing.Point(302, 19);
+            this.gamePaused.Name = "gamePaused";
+            this.gamePaused.Size = new System.Drawing.Size(0, 31);
+            this.gamePaused.TabIndex = 82;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(908, 667);
+            this.Controls.Add(this.gamePaused);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.player);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -77,7 +89,7 @@
             this.MinimizeBox = false;
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "The BreakOut Game";
+            this.Text = "The Breakout Game";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameForm_FormClosing);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.GameForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
@@ -91,5 +103,6 @@
         private System.Windows.Forms.Button player;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label gamePaused;
     }
 }
