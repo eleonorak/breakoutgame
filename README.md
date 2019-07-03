@@ -50,19 +50,19 @@
 # Gameplay и GUI
 При првото вклучување на играта потребно е да се внесе прекар (nickname) и да се одбере ниво со кој играчот сака да ја игра играта. За избор на ниво понудени се две опции.
 
-![Start game](/Images/mainForm.png)
+![Start game](/BreakOutGame/Assets/Images/mainForm.png)
 
 Со клик на копчето ```Започни игра``` доколку играчот има внесено прекар се отвара формата во која се одвива играњето на самата игра.
 
-![Default game](/Images/defaultGame.png)
+![Default game](/BreakOutGame/Assets/Images/defaultGame.png)
 
 Со клик на копчето ```Започни игра``` доколку играчот нема внесено прекар, се известува дека прекарот е задолжителен.
 
 Со клик на копчето ```Откажи``` играта се исклучува.
 
-![Enter a nickname](/Images/nicknameMessage.png)
+![Enter a nickname](/BreakOutGame/Assets/Images/nicknameMessage.png)
 
-![Enter a nickname](/Images/nicknameErrorprovider.png)
+![Enter a nickname](/BreakOutGame/Assets/Images/nicknameErrorprovider.png)
 
 Стандардниот изглед на играта е следниот:
 * Боја на топче - жолта.
@@ -72,33 +72,33 @@
 
 Стандардниот изглед на играта може да биде променет доколку играчот сака да ги промени боите на елементите. Со клик на ``` Подесување ``` на почетната форма се отвара паѓачко мени со опции за промена на боја на елементите.
 
-![Change settings of elements](/Images/menuSettings.png)
+![Change settings of elements](/BreakOutGame/Assets/Images/menuSettings.png)
 
 Со клик на опциите ``` Боја на топче ``` ,``` Позадинска боја ```,``` Боја на играч ``` се отвара палета на бои од кои играчот може да избере.
 
-![Color dialog for change color on elements](/Images/ColorDialog.png)
+![Color dialog for change color on elements](/BreakOutGame/Assets/Images/ColorDialog.png)
 
 Со клик на ``` Боја на блокови  ``` играчот има две опции и тоа дали блоковите да бидат во една боја ``` Една боја ``` или  во повеќе бои ```Различни бои```.Доколку се избере дека блоковите ќе бидат во една боја повторно се отвара палета на бои за избор на боја.
 
-![Change color for blocks](/Images/blocksColor.png)
+![Change color for blocks](/BreakOutGame/Assets/Images/blocksColor.png)
 
 Со промена на стандардниот изглед играчот може да ја почне играта со боите кои ги одбрал :
 
-![Custom colors](/Images/customColor.png)
+![Custom colors](/BreakOutGame/Assets/Images/customColor.png)
 
 Играта има опција за паузирање и тоа со притискање на копчето ```P``` од тастатура при што играчот е известен за состојвата на играта. Ако играта е паузирана со повторно притискање на копчето ```P``` играта продолжува од таму од каде што била паузирана. 
 
-![Pause](/Images/pause.png)
+![Pause](/BreakOutGame/Assets/Images/pause.png)
 
 Во играта може да се постигнат два резултати и тоа :
 
 Играчот да победи односно да ги скршил сите блокови со што добива известување за тоа ,односно отварање на формата за приказ на резултат кој би изгледал како на сликата 
 
-![Win](/Images/win.png)
+![Win](/BreakOutGame/Assets/Images/win.png)
 
 Другиот резултат е играчот да изгубил односно дека топчето паднало на дното. Исто така и за овој резултат се отвара формата со соодветна порака како на сликата 
 
-![Lose](/Images/lose.png)
+![Lose](/BreakOutGame/Assets/Images/lose.png)
 
 Во формата за приказ на резултатот постојат две копчиња ```Оди на почеток``` и ```Нова игра```.
 
